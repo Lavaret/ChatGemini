@@ -5,10 +5,7 @@
             <stop offset="0%" style="stop-color:#AFAF00; stop-opacity:1" />
             <stop offset="50%" style="stop-color:#2d1926; stop-opacity:1" />
         </radialGradient>
-        <!-- Cień kuli -->
-        <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
-            <feDropShadow dx="2" dy="2" stdDeviation="2" flood-color="#222" />
-        </filter>
+
     </defs>
 
     <!-- Kula z gradientem -->

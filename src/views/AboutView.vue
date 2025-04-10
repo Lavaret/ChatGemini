@@ -1,9 +1,9 @@
 <template>
   <div class="about" :class="{'content': content}">
-    <h3>Consult with crystal ball</h3>
+    <h3 class="title">Consult with crystal ball</h3>
     <div class="button-nav">
-      <input @keydown.enter="run"  class="prompt-input" v-model="prompt">
-      <button @click="run">Run</button>
+      <input @keydown.enter="run" placeholder="Ask about anything.." class="prompt-input" v-model="prompt">
+      <button @click="run"><PaperPlane /></button>
     </div>
     <div v-if="loading" class="loading"><EcosystemIcon class="loading-icon"/></div>
     <pre v-if="content" class="response">
@@ -16,8 +16,9 @@
 import { ref } from 'vue';
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import EcosystemIcon from '@/components/icons/IconEcosystem.vue'
+import PaperPlane from '@/components/icons/PaperPlane.vue'
 
-const prompt = ref('Write a story about a magic backpack.')
+const prompt = ref('')
 const content = ref('')
 const loading = ref(false)
 // Fetch your API_KEY
@@ -56,6 +57,10 @@ const run = async () => {
     justify-content: center;
     padding: 3rem 0;
   }
+}
+
+.about h3.title {
+  margin-top: 1rem;
 }
 
 .about.content {
@@ -118,6 +123,7 @@ button {
   border-style: solid;
   border-color: var(--color-border);
   padding: .5rem 1rem;
+  line-height: 1rem;
   border-radius: 5px;
 }
 
